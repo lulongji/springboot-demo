@@ -1,0 +1,25 @@
+#默认使用配置
+spring:
+  profiles:
+    active: dev
+
+
+#公共配置与profiles选择无关
+mybatis:
+  typeAliasesPackage: com.example.demo.domain
+  mapperLocations: classpath*:com/example/demo/dao/**/*Mapper.xml
+
+
+---
+
+#开发配置
+spring:
+  profiles: dev
+
+  datasource:
+    url: jdbc:mysql://192.168.6.228:3306/springboot_test
+    username: root
+    password: !QAZ2wsx3edc
+    driver-class-name: com.mysql.jdbc.Driver
+    # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource

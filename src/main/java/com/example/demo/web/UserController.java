@@ -1,6 +1,6 @@
 package com.example.demo.web;
 
-import com.example.demo.service.TestBootService;
+import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,18 +9,22 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description:
  * @Author: lulongji
  */
-@RequestMapping("/testboot")
+@RequestMapping("/user")
 @RestController
-public class TestBootController {
+public class UserController {
 
     @Autowired
-    private TestBootService testBootService;
+    private UserService testBootService;
 
-    @RequestMapping("/test")
+    /**
+     * 添加
+     *
+     * @return
+     */
+    @RequestMapping("/addUser")
     public String test() {
         String test = "";
         try {
-            test = testBootService.test();
         } catch (Exception e) {
             e.printStackTrace();
         }
