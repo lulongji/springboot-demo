@@ -13,7 +13,7 @@ import java.util.List;
  * @Description:
  * @Author: lulongji
  */
-@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
