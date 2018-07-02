@@ -1,4 +1,4 @@
-package com.example.demo.web;
+package com.example.demo.controller;
 
 
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
