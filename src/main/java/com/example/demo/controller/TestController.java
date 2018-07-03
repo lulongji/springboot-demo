@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,8 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 @EnableAutoConfiguration
 public class TestController {
 
+
+    @Value("${test}")
+    private String path;
+
     @RequestMapping("/")
     public String test() {
-        return "Hello world";
+        return path;
     }
+
 }

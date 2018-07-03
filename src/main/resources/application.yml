@@ -10,33 +10,4 @@ mybatis:
   mapperLocations: classpath*:com/example/demo/dao/**/*Mapper.xml
 
 
----
 
-#开发配置
-server:
-  port: 8080
-
-spring:
-  profiles: dev
-
-  datasource:
-    url: jdbc:oracle:thin:@192.168.6.205:1521:orcl
-    username: test
-    password: test
-    driver-class-name: oracle.jdbc.driver.OracleDriver
-    druid.initialSize: 5
-    druid.maxActive: 100
-    druid.minIdle: 10
-    druid.maxWait: 60000
-     #使用druid数据源
-    type: com.alibaba.druid.pool.DruidDataSource
-
-
-#分页的配置
-pagehelper:
-    helperDialect: oracle
-    reasonable: true
-    supportMethodsArguments: true
-    params: count=countSql
-    offset-as-page-num: true
-    row-bounds-with-count: true
