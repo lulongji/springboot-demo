@@ -29,7 +29,8 @@
     <!-- Console 输出设置 -->
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{requestId}] [%logger] [%X{akkaSource}] - %msg %rootException %n
+            </pattern>
             <charset>utf8</charset>
         </encoder>
     </appender>
