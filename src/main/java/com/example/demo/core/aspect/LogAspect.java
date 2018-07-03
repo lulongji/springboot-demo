@@ -20,7 +20,6 @@ import java.util.UUID;
 /**
  * @Description: 日志切面（统一日志处理）
  * @Author: lulongji
- * @Date: Created in 14:36 2018/7/3
  */
 @Aspect
 @Order(-99)

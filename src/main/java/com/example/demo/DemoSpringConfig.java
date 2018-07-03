@@ -1,8 +1,14 @@
 package com.example.demo;
 
+import com.example.demo.core.filter.DemoTimeFilter;
 import com.example.demo.core.interceptor.LogInterceptor;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @Description:自定义拦截器
