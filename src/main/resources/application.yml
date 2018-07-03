@@ -9,5 +9,8 @@ mybatis:
   typeAliasesPackage: com.example.demo.domain
   mapperLocations: classpath*:com/example/demo/dao/**/*Mapper.xml
 
+#项目通用应用
+test: Hello world!
+
 
 

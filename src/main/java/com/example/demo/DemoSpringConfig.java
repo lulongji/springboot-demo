@@ -62,8 +62,7 @@ public class DemoSpringConfig extends WebMvcConfigurationSupport {
      **/
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        //将所有/static/** 访问都映射到classpath:/static/ 目录下
-        //registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
+        registry.addResourceHandler("/static/**").addResourceLocations("classpath:/static/");
     }
 
     /**
