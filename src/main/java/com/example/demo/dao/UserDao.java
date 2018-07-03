@@ -10,13 +10,15 @@ import java.util.List;
  */
 public interface UserDao {
 
-    void add(User user) throws Exception;
+    void addUser(User user) throws Exception;
 
-    void update(User user) throws Exception;
+    void updateUser(User user) throws Exception;
 
-    void delete(User user) throws Exception;
+    void deleteUser(User user) throws Exception;
 
-    User get(User user) throws Exception;
+    User getUser(User user) throws Exception;
+
+    User getUserById(User user) throws Exception;
 
     List<User> getUserList(User user) throws Exception;
 

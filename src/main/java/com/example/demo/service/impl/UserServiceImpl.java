@@ -9,34 +9,36 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-/**
- * @Description:
- * @Author: lulongji
- */
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
 
+
     @Override
-    public void add(User user) throws Exception {
-        userDao.add(user);
+    public void addUser(User user) throws Exception {
+        userDao.addUser(user);
     }
 
     @Override
-    public void update(User user) throws Exception {
-        userDao.update(user);
+    public void updateUser(User user) throws Exception {
+        userDao.updateUser(user);
     }
 
     @Override
-    public void delete(User user) throws Exception {
-        userDao.delete(user);
+    public void deleteUser(User user) throws Exception {
+        userDao.deleteUser(user);
     }
 
     @Override
-    public User get(User user) throws Exception {
-        return userDao.get(user);
+    public User getUser(User user) throws Exception {
+        return userDao.getUser(user);
+    }
+
+    @Override
+    public User getUserById(User user) throws Exception {
+        return userDao.getUserById(user);
     }
 
     @Override

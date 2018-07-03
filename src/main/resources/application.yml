@@ -21,5 +21,9 @@ spring:
     username: test
     password: test
     driver-class-name: oracle.jdbc.driver.OracleDriver
+    druid.initialSize: 5
+    druid.maxActive: 100
+    druid.minIdle: 10
+    druid.maxWait: 60000
      #使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
