@@ -17,9 +17,9 @@ spring:
   profiles: dev
 
   datasource:
-    url: jdbc:mysql://192.168.6.228:3306/springboot_test
-    username: root
-    password: !QAZ2wsx3edc
-    driver-class-name: com.mysql.jdbc.Driver
-    # 使用druid数据源
+    url: jdbc:oracle:thin:@192.168.6.205:1521:orcl
+    username: test
+    password: test
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+     #使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource

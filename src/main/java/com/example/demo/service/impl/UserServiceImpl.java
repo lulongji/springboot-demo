@@ -17,30 +17,30 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    private UserDao testBootDao;
+    private UserDao userDao;
 
     @Override
     public void add(User user) throws Exception {
-        testBootDao.add(user);
+        userDao.add(user);
     }
 
     @Override
     public void update(User user) throws Exception {
-        testBootDao.update(user);
+        userDao.update(user);
     }
 
     @Override
     public void delete(User user) throws Exception {
-        testBootDao.delete(user);
+        userDao.delete(user);
     }
 
     @Override
     public User get(User user) throws Exception {
-        return testBootDao.get(user);
+        return userDao.get(user);
     }
 
     @Override
     public List<User> getUserList(User user) throws Exception {
-        return testBootDao.getUserList(user);
+        return userDao.getUserList(user);
     }
 }
