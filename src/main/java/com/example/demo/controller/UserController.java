@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 import com.example.demo.domain.User;
 import com.example.demo.service.UserService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.llj.base.page.Result;
 import com.llj.base.uuid.UUIDGenerator;
 import org.slf4j.Logger;
@@ -133,6 +135,27 @@ public class UserController {
         try {
             List<User> userList = testBootService.getUserList(user);
             result.setResult(userList);
+        } catch (Exception e) {
+            result = Result.failure();
+            e.printStackTrace();
+        }
+        return result;
+    }
+
+    /**
+     * 根据条件查询所有数据(分页)
+     *
+     * @return
+     */
+    @RequestMapping(value = "/getUserListPage", method = RequestMethod.GET)
+    public Result getUserListPage(User user) {
+        logger.info("根据条件查询所有数据(分页)，参数：" + user.toString());
+        Result result = Result.success();
+        try {
+            PageHelper.startPage(1, 2);
+            List<User> userListPage = testBootService.getUserList(user);
+            PageInfo<User> page = new PageInfo<>(userListPage);
+            result.setResult(page);
         } catch (Exception e) {
             result = Result.failure();
             e.printStackTrace();

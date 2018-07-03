@@ -13,6 +13,9 @@ mybatis:
 ---
 
 #开发配置
+server:
+  port: 8080
+
 spring:
   profiles: dev
 
@@ -27,3 +30,13 @@ spring:
     druid.maxWait: 60000
      #使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
+
+
+#分页的配置
+pagehelper:
+    helperDialect: oracle
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    offset-as-page-num: true
+    row-bounds-with-count: true
