@@ -127,6 +127,18 @@
             <version>1.2.3</version>
         </dependency>
 
+        <!--引用AOP-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+        <!--引用GSON,用于打印-->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.7</version>
+        </dependency>
+
 
     </dependencies>
 

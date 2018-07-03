@@ -36,7 +36,6 @@ public class UserController {
      */
     @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     public Result addUser(User user) {
-        logger.info("添加测试数据，参数：" + user.toString());
         Result result = Result.success();
         try {
             UUIDGenerator uuidGenerator = new UUIDGenerator();
@@ -56,7 +55,6 @@ public class UserController {
      */
     @RequestMapping(value = "/modifyUser", method = RequestMethod.GET)
     public Result modifyUser(User user) {
-        logger.info("修改测试数据，参数：" + user.toString());
         Result result = Result.success();
         try {
             testBootService.updateUser(user);
@@ -92,7 +90,6 @@ public class UserController {
      */
     @RequestMapping(value = "/getUserByUserName", method = RequestMethod.GET)
     public Result getUserByUserName(User user) {
-        logger.info("根据账户名查询，参数：" + user.toString());
         Result result = Result.success();
         try {
             User userData = testBootService.getUser(user);
@@ -111,7 +108,6 @@ public class UserController {
      */
     @RequestMapping(value = "/getUserById", method = RequestMethod.GET)
     public Result getUserById(User user) {
-        logger.info("根据Id查询，参数：" + user.toString());
         Result result = Result.success();
         try {
             User userData = testBootService.getUserById(user);
@@ -130,7 +126,6 @@ public class UserController {
      */
     @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
     public Result getUserList(User user) {
-        logger.info("根据条件查询所有数据，参数：" + user.toString());
         Result result = Result.success();
         try {
             List<User> userList = testBootService.getUserList(user);
@@ -149,7 +144,6 @@ public class UserController {
      */
     @RequestMapping(value = "/getUserListPage", method = RequestMethod.GET)
     public Result getUserListPage(User user) {
-        logger.info("根据条件查询所有数据(分页)，参数：" + user.toString());
         Result result = Result.success();
         try {
             PageHelper.startPage(1, 2);

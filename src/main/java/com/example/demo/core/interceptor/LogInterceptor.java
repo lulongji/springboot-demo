@@ -1,8 +1,8 @@
 package com.example.demo.core.interceptor;
 
 import com.llj.base.uuid.UUIDGenerator;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
 import org.springframework.stereotype.Component;
 import org.springframework.web.servlet.HandlerInterceptor;
@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.UUID;
 
 /**
  * 日志MDC
@@ -21,7 +22,7 @@ public class LogInterceptor implements HandlerInterceptor {
     /**
      * 日志
      */
-    private static Logger logger = LogManager.getLogger(LogInterceptor.class.getName());
+    private static Logger logger = LoggerFactory.getLogger(LogInterceptor.class.getName());
 
     private final static String REQUEST_ID = "requestId";
 
@@ -35,7 +36,7 @@ public class LogInterceptor implements HandlerInterceptor {
 
         String xForwardedForHeader = request.getHeader("X-Forwarded-For");
         String remoteIp = request.getRemoteAddr();
-        String uuid = new UUIDGenerator().generate();
+        String uuid = String.valueOf(UUID.randomUUID());
         logger.info("put requestId ({}) to logger", uuid);
         logger.info("request id:{}, client ip:{}, X-Forwarded-For:{}", uuid, remoteIp, xForwardedForHeader);
         MDC.put(REQUEST_ID, uuid);

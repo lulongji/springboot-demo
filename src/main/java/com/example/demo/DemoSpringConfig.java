@@ -28,8 +28,8 @@ public class DemoSpringConfig extends WebMvcConfigurationSupport {
     public void addInterceptors(InterceptorRegistry registry) {
 
         //日志拦截器
-        registry.addInterceptor(new LogInterceptor());
-        super.addInterceptors(registry);
+        //registry.addInterceptor(new LogInterceptor());
+        //super.addInterceptors(registry);
         //注册自定义拦截器，添加拦截路径和排除拦截路径
         //registry.addInterceptor(new LoggerHandlerInterceptor()).addPathPatterns("api/path/**").excludePathPatterns("api/path/login");
     }
