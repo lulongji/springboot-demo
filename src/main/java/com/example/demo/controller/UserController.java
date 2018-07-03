@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -31,7 +32,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping("/addUser")
+    @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     public Result addUser(User user) {
         logger.info("添加测试数据，参数：" + user.toString());
         Result result = Result.success();
@@ -51,7 +52,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping("/modifyUser")
+    @RequestMapping(value = "/modifyUser", method = RequestMethod.GET)
     public Result modifyUser(User user) {
         logger.info("修改测试数据，参数：" + user.toString());
         Result result = Result.success();
@@ -69,7 +70,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping("/delUser")
+    @RequestMapping(value = "/delUser", method = RequestMethod.GET)
     public Result delUser(User user) {
         logger.info("删除测试数据，参数：" + user.toString());
         Result result = Result.success();
@@ -87,7 +88,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping("/getUserByUserName")
+    @RequestMapping(value = "/getUserByUserName", method = RequestMethod.GET)
     public Result getUserByUserName(User user) {
         logger.info("根据账户名查询，参数：" + user.toString());
         Result result = Result.success();
@@ -106,7 +107,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping("/getUserById")
+    @RequestMapping(value = "/getUserById", method = RequestMethod.GET)
     public Result getUserById(User user) {
         logger.info("根据Id查询，参数：" + user.toString());
         Result result = Result.success();
@@ -125,7 +126,7 @@ public class UserController {
      *
      * @return
      */
-    @RequestMapping("/getUserList")
+    @RequestMapping(value = "/getUserList", method = RequestMethod.GET)
     public Result getUserList(User user) {
         logger.info("根据条件查询所有数据，参数：" + user.toString());
         Result result = Result.success();
