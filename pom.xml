@@ -140,12 +140,6 @@
             <version>2.7</version>
         </dependency>
 
-        <!--  cache -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-cache</artifactId>
-        </dependency>
-
         <!--redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -163,6 +157,18 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
+        </dependency>
+
+        <!--  cache -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+        </dependency>
+
+        <!-- ehcache 缓存 -->
+        <dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache</artifactId>
         </dependency>
 
 
@@ -191,6 +197,7 @@
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <!-- 打包跳过测试-->
                 <configuration>
+                    <jvmArguments>-Xmx64m -XX:MaxDirectMemorySize=512m</jvmArguments>
                     <finalName>***</finalName>
                     <mainClass>***</mainClass>
                 </configuration>

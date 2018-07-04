@@ -23,8 +23,13 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
 
   mvc:
-    #静态资源过滤
+  #静态资源过滤
     static-path-pattern: /**
+
+  cache:
+   #缓存
+    ehcache:
+      config: classpath:spring/spring-ehcache.xml
 
   #################redis基础配置#################
   application:
