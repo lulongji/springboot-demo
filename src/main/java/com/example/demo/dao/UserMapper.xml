@@ -8,14 +8,14 @@
         INSERT INTO TEST_USER
         (
 			ID,
-			USERNAME,
+			USER_NAME,
 			PASSWORD,
 			AGE
 		)
 		VALUES
         (
             #{id},
-            #{username},
+            #{userName},
             #{password},
             #{age}
         )
@@ -24,19 +24,19 @@
     <!-- 修改密码 -->
     <update id="updateUser" parameterType="User">
         UPDATE TEST_USER SET PASSWORD = #{password},
-        WHERE USERNAME = #{username}
+        WHERE USER_NAME = #{userName}
     </update>
 
 
     <!--删除  -->
     <delete id="deleteUser" parameterType="User">
-        DELETE FROM TEST_USER WHERE USERNAME = #{username}
+        DELETE FROM TEST_USER WHERE USER_NAME = #{userName}
     </delete>
 
 
     <!-- 查询单个 登陆比对用户名密码-->
     <select id="getUser" parameterType="User" resultType="User">
-        SELECT * FROM TEST_USER WHERE USERNAME = #{username} and PASSWORD = #{password}
+        SELECT * FROM TEST_USER WHERE USER_NAME = #{userName} and PASSWORD = #{password}
     </select>
 
     <!-- 查询单个id数据-->
@@ -48,8 +48,8 @@
     <select id="getUserList" parameterType="User" resultType="User">
         SELECT * FROM TEST_USER
         <where>
-            <if test="null != username and '' != username">
-                USERNAME = #{username}
+            <if test="null != userName and '' != userName">
+                USER_NAME = #{userName}
             </if>
             <if test="null != password and '' != password">
                 PASSWORD = #{password}

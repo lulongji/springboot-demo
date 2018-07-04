@@ -8,6 +8,9 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.CachePut;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Isolation;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -28,6 +31,7 @@ public class UserServiceImpl implements UserService {
 
 
     @CacheEvict(value = DEMO_CACHE_NAME, key = THING_ALL_KEY)
+    @Transactional(propagation = Propagation.REQUIRED, isolation = Isolation.DEFAULT, timeout = 36000, rollbackFor = Exception.class)
     @Override
     public void addUser(User user) throws Exception {
         userDao.addUser(user);

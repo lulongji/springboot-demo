@@ -34,6 +34,7 @@ public class UserController {
      *
      * @return
      */
+
     @RequestMapping(value = "/addUser", method = RequestMethod.GET)
     public Result addUser(User user) {
         Result result = Result.success();

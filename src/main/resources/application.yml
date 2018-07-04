@@ -2,12 +2,27 @@
 spring:
   profiles:
     active: dev
+  datasource:
+    tomcat:
+      init-s-q-l:
+    hikari:
+      connection-init-sql:
 
 
 #公共配置与profiles选择无关
 mybatis:
   typeAliasesPackage: com.example.demo.domain
   mapperLocations: classpath*:com/example/demo/dao/**/*Mapper.xml
+
+  configuration:
+    cacheEnabled: true
+    useGeneratedKeys: true
+    defaultExecutorType: REUSE
+    log-imp: LOGBACK
+    #驼峰标识
+    mapUnderscoreToCamelCase: true
+    jdbcTypeForNull: NULL
+
 
 #项目通用应用
 test: Hello world!
@@ -16,6 +31,15 @@ test: Hello world!
 logback:
   log-dir: /Users/lu/Desktop
   log-file: demo
+
+##SQL日志##
+logging:
+  level:
+    com:
+      example:
+        demo:
+          dao: DEBUG
+
 
 
 
