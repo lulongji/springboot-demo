@@ -27,13 +27,18 @@ spring:
     static-path-pattern: /**
 
   #################redis基础配置#################
+  application:
+    name: spring-boot-redis
   redis:
     database: 0
     ip: 192.168.6.205
     pwd:
     port: 6379
     # 连接超时时间 单位 ms（毫秒）
-    timeout: 3000
+    timeout: 20000
+    #cluster:
+      #nodes: 192.168.211.134:7000,192.168.211.134:7001,192.168.211.134:7002
+      #maxRedirects: 6
 
     #################redis线程池设置#################
     # 连接池中的最大空闲连接，默认值也是8。
@@ -57,11 +62,6 @@ spring:
       reconnectRetryWaittime: 7000
 
 
-    #################redis哨兵设置#################
-    # Redis服务器master的名字
-    #sentinel.master: master8026
-    # redis-sentinel的配置地址和端口
-    #sentinel.nodes: 10.189.80.25:26379,10.189.80.26:26379,10.189.80.27:26378
 
 #分页的配置
 pagehelper:
