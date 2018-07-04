@@ -14,10 +14,10 @@
 <configuration>
     <contextName>SpringBootDemo</contextName>
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <property name="LOG_PATH" value="/Users/lu/Desktop"/>
+    <springProperty name="LOG_PATH" source="logback.log-dir"/>
 
     <!--设置系统日志目录-->
-    <property name="APPDIR" value="SpringBootDemo"/>
+    <springProperty name="APPDIR" source="logback.log-file"/>
 
     <!-- 日志记录器，日期滚动记录 -->
     <appender name="FILEERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">

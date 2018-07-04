@@ -8,7 +8,7 @@ web:
   upload-path: /Users/lu/Desktop
 
 spring:
-  profiles: dev
+  profiles: pro
 
   datasource:
     url: jdbc:oracle:thin:@192.168.6.205:1521:orcl
@@ -26,6 +26,42 @@ spring:
     #静态资源过滤
     static-path-pattern: /**
 
+  #################redis基础配置#################
+  redis:
+    database: 0
+    ip: 192.168.6.205
+    pwd:
+    port: 6379
+    # 连接超时时间 单位 ms（毫秒）
+    timeout: 3000
+
+    #################redis线程池设置#################
+    # 连接池中的最大空闲连接，默认值也是8。
+    pool:
+      maxIdle:  150
+      #连接池中的最小空闲连接，默认值也是0。
+      minIdle: 100
+      # 如果赋值为-1，则表示不限制；如果pool已经分配了maxActive个jedis实例，则此时pool的状态为exhausted(耗尽)。
+      maxActive: 1024
+      # 等待可用连接的最大时间，单位毫秒，默认值为-1，表示永不超时。如果超过等待时间，则直接抛出JedisConnectionException
+      max-wait: 1000
+      #多长时间检查一次连接池中空闲的连接
+      maxTotal: 150
+      #当池内没有返回对象时，最大等待时间
+      maxWait: 7000
+      #当调用borrowObject方法时，是否进行有效性检查
+      testOnBorrow: true
+      #重新连接重试次数
+      reconnectRetryCount: 50
+      #重连等待时间
+      reconnectRetryWaittime: 7000
+
+
+    #################redis哨兵设置#################
+    # Redis服务器master的名字
+    #sentinel.master: master8026
+    # redis-sentinel的配置地址和端口
+    #sentinel.nodes: 10.189.80.25:26379,10.189.80.26:26379,10.189.80.27:26378
 
 #分页的配置
 pagehelper:
@@ -37,4 +73,3 @@ pagehelper:
     row-bounds-with-count: true
 
 
-test: sss

@@ -12,5 +12,10 @@ mybatis:
 #项目通用应用
 test: Hello world!
 
+#日志
+logback:
+  log-dir: /Users/lu/Desktop
+  log-file: demo
+
 
 
