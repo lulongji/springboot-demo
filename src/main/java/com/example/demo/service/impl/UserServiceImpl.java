@@ -44,6 +44,7 @@ public class UserServiceImpl implements UserService {
         userDao.updateUser(user);
     }
 
+    @Transactional
     @CacheEvict(value = DEMO_CACHE_NAME)
     @Override
     public void deleteUser(User user) throws Exception {
