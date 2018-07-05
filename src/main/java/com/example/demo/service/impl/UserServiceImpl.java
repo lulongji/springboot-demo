@@ -20,7 +20,7 @@ public class UserServiceImpl implements UserService {
     /**
      * 缓存的key
      */
-    public static final String THING_ALL_KEY = "\"thing_all\"";
+    public static final String THING_ALL_KEY = "\"user_all\"";
     /**
      * value属性表示使用哪个缓存策略，缓存策略在ehcache.xml
      */
