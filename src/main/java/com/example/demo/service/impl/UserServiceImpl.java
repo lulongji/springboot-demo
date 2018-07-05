@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
         userDao.addUser(user);
     }
 
-    @CachePut(value = DEMO_CACHE_NAME, key = "#user.getId()+'thing'")
+    @CachePut(value = DEMO_CACHE_NAME, key = "#user.getId()+'user'")
     @CacheEvict(value = DEMO_CACHE_NAME, key = THING_ALL_KEY)
     @Override
     public void updateUser(User user) throws Exception {
@@ -56,7 +56,7 @@ public class UserServiceImpl implements UserService {
         return userDao.getUser(user);
     }
 
-    @Cacheable(value = DEMO_CACHE_NAME, key = "#user.getId()+'thing'")
+    @Cacheable(value = DEMO_CACHE_NAME, key = "#user.getId()+'user'")
     @Override
     public User getUserById(User user) throws Exception {
         System.err.println("没有走缓存！" + user.getId());
