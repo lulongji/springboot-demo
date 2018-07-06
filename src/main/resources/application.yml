@@ -46,7 +46,7 @@ mybatis:
 
 
 #项目通用应用
-test: Hello world!
+test: Spring Boot!
 
 #日志
 logback:

@@ -70,6 +70,8 @@ public class TestController {
         mv.addObject("nameKey", path);
         mv.addObject("11111", "1111");
         mv.addObject("11111", "111111");
+        mv.addObject("sssss", "sssssss");
+        mv.addObject("ssscccc", "sssssss");
         return mv;
     }
 
@@ -82,5 +84,6 @@ public class TestController {
         map.put("nameKey", path);
         return new ModelAndView("test", map);
     }
+
 
 }
