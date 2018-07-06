@@ -1,7 +1,9 @@
 package com.example.demo.config;
 
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.MediaType;
 import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
 
 /**
  * @Description:自定义拦截器
@@ -38,7 +40,8 @@ public class DemoSpringConfig extends WebMvcConfigurationSupport {
      **/
     @Override
     public void configureViewResolvers(ViewResolverRegistry registry) {
-
+        registry.freeMarker();
+        registry.enableContentNegotiation(new MappingJackson2JsonView());
     }
 
     /**
@@ -46,7 +49,12 @@ public class DemoSpringConfig extends WebMvcConfigurationSupport {
      **/
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-
+        configurer.favorPathExtension(true)
+                .ignoreAcceptHeader(true)
+                .parameterName("mediaType")
+                .defaultContentType(MediaType.TEXT_HTML)
+                .mediaType("html", MediaType.TEXT_HTML)
+                .mediaType("json", MediaType.APPLICATION_JSON);
     }
 
     /**
@@ -70,6 +78,8 @@ public class DemoSpringConfig extends WebMvcConfigurationSupport {
      **/
     @Override
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable();
+        super.configureDefaultServletHandling(configurer);
     }
 
 

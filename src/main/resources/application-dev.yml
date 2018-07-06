@@ -1,6 +1,6 @@
 #开发配置
 server:
-  port: 8080
+  port: 8888
   session:
 
 #上传路径
@@ -65,6 +65,7 @@ spring:
       reconnectRetryCount: 50
       #重连等待时间
       reconnectRetryWaittime: 7000
+
 
 
 

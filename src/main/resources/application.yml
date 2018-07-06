@@ -7,7 +7,26 @@ spring:
       init-s-q-l:
     hikari:
       connection-init-sql:
+  freemarker:
+    allow-request-override: false
+    cache: false
+    settings:
+      template_update_delay: 0
+    check-template-location: true
+    charset: UTF-8
+    content-type: text/html
+    expose-request-attributes: false
+    expose-session-attributes: false
+    expose-spring-macro-helpers: false
+    templateEncoding: UTF-8
+    templateLoaderPath: classpath:/templates/
+    prefix:
+    suffix: .html
 
+  mvc:
+      view:
+        prefix: /WEB-INF/
+        suffix: .jsp
 
 #公共配置与profiles选择无关
 mybatis:
@@ -22,6 +41,8 @@ mybatis:
     #驼峰标识
     mapUnderscoreToCamelCase: true
     jdbcTypeForNull: NULL
+
+
 
 
 #项目通用应用
@@ -39,6 +60,9 @@ logging:
       example:
         demo:
           dao: DEBUG
+
+
+
 
 
 
