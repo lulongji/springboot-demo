@@ -50,8 +50,8 @@ test: Hello world!
 
 #日志
 logback:
-  log-dir: /Users/lu/Desktop
-  log-file: demo
+  logDir: /Users/lu/Desktop
+  logFile: demo
 
 ##SQL日志##
 logging:

@@ -14,10 +14,10 @@
 <configuration>
     <contextName>SpringBootDemo</contextName>
     <!--定义日志文件的存储地址 勿在 LogBack 的配置中使用相对路径-->
-    <springProperty name="LOG_PATH" source="logbacklog-dir"/>
+    <springProperty name="LOG_PATH" source="logback.logDir"/>
 
     <!--设置系统日志目录-->
-    <springProperty name="APPDIR" source="logback.log-file"/>
+    <springProperty name="APPDIR" source="logback.logFile"/>
 
     <!-- 日志记录器，日期滚动记录 -->
     <appender name="FILEERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
@@ -38,7 +38,8 @@
         <append>true</append>
         <!-- 日志文件的格式 -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{requestId}] [%logger] [%X{akkaSource}] - %msg %rootException %n
+            <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{requestId}] [%logger] [%X{akkaSource}] - %msg
+                %rootException %n
             </pattern>
             <charset>utf-8</charset>
         </encoder>
@@ -69,7 +70,8 @@
         <append>true</append>
         <!-- 日志文件的格式 -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{requestId}] [%logger] [%X{akkaSource}] - %msg %rootException %n
+            <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{requestId}] [%logger] [%X{akkaSource}] - %msg
+                %rootException %n
             </pattern>
             <charset>utf-8</charset>
         </encoder>
@@ -100,7 +102,8 @@
         <append>true</append>
         <!-- 日志文件的格式 -->
         <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{requestId}] [%logger] [%X{akkaSource}] - %msg %rootException %n
+            <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{requestId}] [%logger] [%X{akkaSource}] - %msg
+                %rootException %n
             </pattern>
             <charset>utf-8</charset>
         </encoder>
@@ -115,7 +118,8 @@
     <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
         <!--encoder 默认配置为PatternLayoutEncoder-->
         <encoder>
-            <pattern>[%date{ISO8601}] [%-5level] - [%thread] [%X{requestId}] [%logger] [%X{akkaSource}] - %msg %rootException %n
+            <pattern>%black(控制台-) %red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight([%-5level])  %cyan([%X{requestId}])  %boldMagenta([%logger]) [%X{akkaSource}] -  %cyan(%msg
+                %rootException %n)
             </pattern>
             <charset>utf-8</charset>
         </encoder>

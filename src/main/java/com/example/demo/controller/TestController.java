@@ -79,6 +79,7 @@ public class TestController {
         map.put("aaaa", "aaaaa");
         map.put("bbbb", "bbbbb");
         map.put("cccc", "ccccccc");
+        map.put("nameKey", path);
         return new ModelAndView("test", map);
     }
 
