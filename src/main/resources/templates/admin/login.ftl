@@ -5,7 +5,8 @@
     <title>Insert title here</title>
 </head>
 <body>
-    Hello,${nameKey}
+    <div >asddasdsd</div>
+    <a href="/admin/index">asddasdsd</a>
 </body>
 
 </html>

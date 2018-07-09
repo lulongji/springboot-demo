@@ -9,9 +9,15 @@ spring:
       connection-init-sql:
   freemarker:
     allow-request-override: false
+    allow-session-override: false
     cache: false
     settings:
       template_update_delay: 0
+      default_encoding: UTF-8
+      classic_compatible: true
+      date_format: yyyy-MM-dd
+      time_format: HH:mm:ss
+      datetime_format: yyyy-MM-dd HH:mm:ss
     check-template-location: true
     charset: UTF-8
     content-type: text/html
@@ -21,7 +27,7 @@ spring:
     templateEncoding: UTF-8
     templateLoaderPath: classpath:/templates/
     prefix:
-    suffix: .html
+    suffix: .ftl
 
   mvc:
       view:
