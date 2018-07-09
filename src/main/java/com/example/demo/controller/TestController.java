@@ -3,14 +3,22 @@ package com.example.demo.controller;
 
 import com.llj.base.page.Result;
 import com.llj.base.utils.cache.redis.springTemplate.RedisTemplateUtil;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.TimeUnit;
@@ -80,10 +88,11 @@ public class TestController {
         Map<String, String> map = new HashMap();
         map.put("aaaa", "aaaaa");
         map.put("bbbb", "bbbbb");
-        map.put("cccc", "ccccccc");
+        map.put("cccc", "你俩的禄口机场斯蒂芬路上慢点");
         map.put("nameKey", path);
         return new ModelAndView("test", map);
     }
+
 
 
 }

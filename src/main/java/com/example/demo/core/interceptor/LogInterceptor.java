@@ -1,6 +1,5 @@
 package com.example.demo.core.interceptor;
 
-import com.llj.base.uuid.UUIDGenerator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.slf4j.MDC;
