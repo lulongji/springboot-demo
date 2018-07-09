@@ -52,6 +52,7 @@ public class LoginController {
     @RequestMapping(value = {"/admin/index"}, method = RequestMethod.GET)
     public ModelAndView index() {
         ModelAndView mv = new ModelAndView();
+        mv.addObject("a", "水电费");
         mv.setViewName("/admin/index");
         return mv;
     }

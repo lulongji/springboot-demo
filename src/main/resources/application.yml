@@ -12,6 +12,7 @@ spring:
     allow-session-override: false
     cache: false
     settings:
+      locale: zh_CN
       template_update_delay: 0
       default_encoding: UTF-8
       classic_compatible: true
@@ -28,6 +29,11 @@ spring:
     templateLoaderPath: classpath:/templates/
     prefix:
     suffix: .ftl
+  http:
+    encoding:
+      charset: UTF-8 # Charset of HTTP requests and responses. Added to the "Content-Type" header if not set explicitly.
+      enabled: true # Enable http encoding support.
+      force: true
 
   mvc:
       view:

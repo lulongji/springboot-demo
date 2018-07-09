@@ -2,6 +2,8 @@
 server:
   port: 8888
   session:
+  tomcat:
+    uri-encoding: UTF-8
 
 #上传路径
 web:

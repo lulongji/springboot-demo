@@ -1,9 +1,15 @@
 package com.example.demo.config;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.*;
 import org.springframework.web.servlet.view.json.MappingJackson2JsonView;
+
+import java.nio.charset.Charset;
+import java.util.List;
 
 /**
  * @Description:自定义拦截器
@@ -49,7 +55,7 @@ public class DemoSpringConfig extends WebMvcConfigurationSupport {
      **/
     @Override
     public void configureContentNegotiation(ContentNegotiationConfigurer configurer) {
-        configurer.favorPathExtension(true)
+        configurer.favorPathExtension(false)
                 .ignoreAcceptHeader(true)
                 .parameterName("mediaType")
                 .defaultContentType(MediaType.TEXT_HTML)
@@ -80,6 +86,24 @@ public class DemoSpringConfig extends WebMvcConfigurationSupport {
     public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
         super.configureDefaultServletHandling(configurer);
+    }
+
+
+    @Override
+    public void configureMessageConverters(
+            List<HttpMessageConverter<?>> converters) {
+        super.configureMessageConverters(converters);
+        converters.add(responseBodyConverter());
+    }
+
+    /**
+     * 解决中文乱码
+     */
+    @Bean
+    public HttpMessageConverter<String> responseBodyConverter() {
+        StringHttpMessageConverter converter = new StringHttpMessageConverter(
+                Charset.forName("UTF-8"));
+        return converter;
     }
 
 
